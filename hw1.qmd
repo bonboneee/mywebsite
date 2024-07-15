@@ -6,5 +6,53 @@ jupyter: python3
 ## 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
 
 ```{python}
-1+1
+import pandas as pd
+
+df = pd.DataFrame({"name" : ["사과", "딸기", "수박"],
+            "가격" : [1800, 1500, 3000],
+            "판매량" : [24, 38, 13]})
+
+df
+```
+```{python}
+## 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.
+
+price_total = sum(df["가격"])/3
+sell_total = sum(df["판매량"])/3
+price_total, sell_total
+```
+## mpg 데이터를 이용해 분석 문제를 해결해 보세요.
+```{python}
+### 1. mpg 데이터를 불러와 복사본을 만드세요.
+import pandas as pd
+file_path = r'C:/Users/USER/Documents/LS빅데이터/mywebsite/data/mpg.csv'
+mpg = pd.read_csv(file_path)
+mpg_new = mpg.copy()
+```
+```{python}
+### 2.복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
+import pandas as pd
+mpg_new = mpg_new.rename(columns = {'cit' : 'city', 'hwy' : 'highway'})
+mpg_new
+```
+## midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.
+
+```{python}
+### 1. midwest.csv를 불러와 데이터의 특징을 파악하세요.
+
+import pandas as pd
+midwest = pd.read_csv('C:/Users/USER/Documents/LS빅데이터/mywebsite/data/midwest.csv')
+midwest
+```
+```{python}
+### 2. poptotal(전체 인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.
+
+midwest_new = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})
+midwest_new
+
+```
+```{python}
+### 3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.
+
+
 ```
