@@ -158,7 +158,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." id="toc-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="nav-link active" data-scroll-target="#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</a></li>
   <li><a href="#mpg-데이터를-이용해-분석-문제를-해결해-보세요." id="toc-mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="nav-link" data-scroll-target="#mpg-데이터를-이용해-분석-문제를-해결해-보세요.">mpg 데이터를 이용해 분석 문제를 해결해 보세요.</a></li>
-  <li><a href="#midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." id="toc-midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." class="nav-link" data-scroll-target="#midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요.">midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.</a></li>
+  <li><a href="#midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." id="toc-midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." class="nav-link" data-scroll-target="#midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요.">midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.</a>
+  <ul class="collapse">
+  <li><a href="#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." id="toc-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." class="nav-link" data-scroll-target="#아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.">4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -186,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</h2>
-<div id="3636996e" class="cell" data-execution_count="1">
+<div id="c5903e33" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">"name"</span> : [<span class="st">"사과"</span>, <span class="st">"딸기"</span>, <span class="st">"수박"</span>],</span>
@@ -194,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"판매량"</span> : [<span class="dv">24</span>, <span class="dv">38</span>, <span class="dv">13</span>]})</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
@@ -232,32 +235,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="82440848" class="cell" data-execution_count="2">
+<div id="7e0c2ff7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>price_total <span class="op">=</span> <span class="bu">sum</span>(df[<span class="st">"가격"</span>])<span class="op">/</span><span class="dv">3</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sell_total <span class="op">=</span> <span class="bu">sum</span>(df[<span class="st">"판매량"</span>])<span class="op">/</span><span class="dv">3</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>price_total, sell_total</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="73">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>(2100.0, 25.0)</code></pre>
 </div>
 </div>
 </section>
 <section id="mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="mpg-데이터를-이용해-분석-문제를-해결해-보세요.">mpg 데이터를 이용해 분석 문제를 해결해 보세요.</h2>
-<div id="8cb84fd0" class="cell" data-execution_count="3">
+<div id="d296afd6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 1. mpg 데이터를 불러와 복사본을 만드세요.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="vs">r'C:/Users/USER/Documents/LS빅데이터/mywebsite/data/mpg.csv'</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(file_path)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>mpg_new <span class="op">=</span> mpg.copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="07a9f6f6" class="cell" data-execution_count="4">
+<div id="1fca44df" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 2.복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mpg_new <span class="op">=</span> mpg_new.rename(columns <span class="op">=</span> {<span class="st">'cit'</span> : <span class="st">'city'</span>, <span class="st">'hwy'</span> : <span class="st">'highway'</span>})</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>mpg_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -443,13 +446,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요.">midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.</h2>
-<div id="f3d99a54" class="cell" data-execution_count="5">
+<div id="7963f8bc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 1. midwest.csv를 불러와 데이터의 특징을 파악하세요.</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> pd.read_csv(<span class="st">'C:/Users/USER/Documents/LS빅데이터/mywebsite/data/midwest.csv'</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
@@ -752,12 +755,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="0a39455d" class="cell" data-execution_count="6">
+<div id="f0764c27" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 2. poptotal(전체 인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>midwest_new <span class="op">=</span> midwest.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>, <span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>midwest_new<span class="op">=</span> midwest.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>, <span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>midwest_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -1060,11 +1063,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="229a3cb7" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5c92a7b8" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>midwest_new[<span class="st">"asian_per"</span>] <span class="op">=</span> midwest_new[<span class="st">"asian"</span>] <span class="op">/</span> midwest_new[<span class="st">"total"</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>midwest_new[<span class="st">"asian_per"</span>].plot.hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="hw1_files/figure-html/cell-8-output-1.png" width="593" height="411" class="figure-img"></p>
+</figure>
 </div>
+</div>
+</div>
+<section id="아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." class="level3">
+<h3 class="anchored" data-anchor-id="아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.">4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.</h3>
+<p>import numpy as np import pandas as pd midwest_new[“asian_per”].mean() midwest[“asian_mean”] = np.where(midwest[‘asian_per’] &gt; 0.4872,‘large’, ‘small’) midwest</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
