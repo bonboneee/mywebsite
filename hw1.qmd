@@ -38,11 +38,18 @@ mpg_new
 ## midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.
 
 ```{python}
+
 ### 1. midwest.csv를 불러와 데이터의 특징을 파악하세요.
 
 import pandas as pd
 midwest = pd.read_csv('C:/Users/USER/Documents/LS빅데이터/mywebsite/data/midwest.csv')
 midwest
+midwest.head()
+midwest.tail()
+midwest.shape
+midwest.info()
+midwest.describe()
+
 ```
 ```{python}
 ### 2. poptotal(전체 인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.
@@ -53,20 +60,25 @@ midwest_new
 ```
 ```{python}
 ### 3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.
-
+import matplotlib.pyplot as plt
 midwest_new["asian_per"] = midwest_new["asian"] / midwest_new["total"] * 100
 midwest_new["asian_per"].plot.hist()
+plt.show()
+plt.clf()
 ```
 ```{python}
 ### 4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 'large', 그 외에는 'small'을 부여한 파생변수를 만들어 보세요.
+
 import numpy as np
 a = midwest_new["asian_per"].mean()
-midwest["asian_mean"] = np.where(midwest['asian_per'] > a,'large', 'small')
-midwest
+midwest_new["asian_mean"] = np.where(midwest_new["asian_per"] > a,'large', 'small')
+midwest_new
+
 ```
 ```{python}
 ### 5.'large'와 'small'에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보시오.
 count_test = midwest_new["asian_mean"].value_counts()
 count_test
 count_test.plot.bar(rot = 0)
+plt.show()
 ```
