@@ -77,8 +77,10 @@ midwest_new
 ```
 ```{python}
 ### 5.'large'와 'small'에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보시오.
+
 count_test = midwest_new["asian_mean"].value_counts()
 count_test
 count_test.plot.bar(rot = 0)
 plt.show()
+
 ```
