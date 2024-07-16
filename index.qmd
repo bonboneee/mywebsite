@@ -1,6 +1,15 @@
 ---
 title: "testwebsite"
 jupyter: python3
+toc: false
+about:
+    id: hero-heading
+    template: jolla
+    image: logo.jpg
+    links: 
+      - icon: github
+        text: Github
+        href: https://github.com/bonboneee
 ---
 
 This is a Quarto website.
