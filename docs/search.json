@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "testwebsite",
+    "title": "My first website",
     "section": "",
     "text": "This is a Quarto website."
   },
   {
     "objectID": "index.html#홈페이지-첫-화면입니다.",
     "href": "index.html#홈페이지-첫-화면입니다.",
-    "title": "testwebsite",
+    "title": "My first website",
     "section": "홈페이지 첫 화면입니다.",
-    "text": "홈페이지 첫 화면입니다.\n\n안녕하세요, 유은서입니다. 저의 노고가 담긴 소중한 포트폴리오입니다.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n2"
+    "text": "홈페이지 첫 화면입니다.\n\n안녕하세요, 유은서입니다. 저의 노고가 담긴 소중한 포트폴리오입니다.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
