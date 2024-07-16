@@ -155,6 +155,4 @@ mpg.assign(total = lambda x : x['hwy'] + x['cty'],
     .sort_values(['mean'], ascending = False)\
     .head(3)
 
-
-
 ```
