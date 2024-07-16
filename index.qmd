@@ -1,5 +1,5 @@
 ---
-title: "My first website"
+title: "Helena's website"
 jupyter: python3
 toc: false
 about:
@@ -10,13 +10,17 @@ about:
       - icon: github
         text: Github
         href: https://github.com/bonboneee
+      - icon: Blog
+        text: Blog
+        href: https://blog.naver.com/y549310
 ---
 
-This is a Quarto website.
 
-## 홈페이지 첫 화면입니다.
 
-### 안녕하세요, 유은서입니다. 저의 노고가 담긴 소중한 포트폴리오입니다.
+
+### 안녕하세요, 유은서입니다.
+
+#### 저의 노고가 담긴 소중한 포트폴리오입니다.
 
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
