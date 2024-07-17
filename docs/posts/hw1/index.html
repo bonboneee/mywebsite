@@ -186,8 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." id="toc-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="nav-link active" data-scroll-target="#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</a></li>
-  <li><a href="#mpg-데이터를-이용해-분석-문제를-해결해-보세요." id="toc-mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="nav-link" data-scroll-target="#mpg-데이터를-이용해-분석-문제를-해결해-보세요.">mpg 데이터를 이용해 분석 문제를 해결해 보세요.</a></li>
+  <li><a href="#mpg-데이터를-이용해-분석-문제를-해결해-보세요." id="toc-mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="nav-link active" data-scroll-target="#mpg-데이터를-이용해-분석-문제를-해결해-보세요.">mpg 데이터를 이용해 분석 문제를 해결해 보세요.</a></li>
   <li><a href="#midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." id="toc-midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." class="nav-link" data-scroll-target="#midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요.">midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.</a></li>
   </ul>
 </nav>
@@ -199,9 +198,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="level2">
-<h2 class="anchored" data-anchor-id="다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</h2>
-<div id="26eb83f8" class="cell" data-execution_count="1">
+<p><img src="pic.png" class="img-fluid"> ## 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</p>
+<div id="3126ab91" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">"name"</span> : [<span class="st">"사과"</span>, <span class="st">"딸기"</span>, <span class="st">"수박"</span>],</span>
@@ -247,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="3d195920" class="cell" data-execution_count="2">
+<div id="462153db" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>price_total <span class="op">=</span> <span class="bu">sum</span>(df[<span class="st">"가격"</span>])<span class="op">/</span><span class="dv">3</span></span>
@@ -257,17 +255,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>(2100.0, 25.0)</code></pre>
 </div>
 </div>
-</section>
 <section id="mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="mpg-데이터를-이용해-분석-문제를-해결해-보세요.">mpg 데이터를 이용해 분석 문제를 해결해 보세요.</h2>
-<div id="23051666" class="cell" data-execution_count="3">
+<div id="d626e4f0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 1. mpg 데이터를 불러와 복사본을 만드세요.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="vs">r'C:/Users/USER/Documents/LS빅데이터/mywebsite/data/mpg.csv'</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(file_path)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>mpg_new <span class="op">=</span> mpg.copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="61f27f51" class="cell" data-execution_count="4">
+<div id="e5bfc276" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 2.복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mpg_new <span class="op">=</span> mpg_new.rename(columns <span class="op">=</span> {<span class="st">'cit'</span> : <span class="st">'city'</span>, <span class="st">'hwy'</span> : <span class="st">'highway'</span>})</span>
@@ -458,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="midwest.csv는-미국-동북중부east-north-central-states-437개-지역의-인구-통계-정보를-담고-있습니다.-midwest.csv를-이용해-데이터-분석-문제를-해결해-보세요.">midwest.csv는 미국 동북중부(East North Central States) 437개 지역의 인구 통계 정보를 담고 있습니다. midwest.csv를 이용해 데이터 분석 문제를 해결해 보세요.</h2>
-<div id="6a60921f" class="cell" data-execution_count="5">
+<div id="45e1e45d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 1. midwest.csv를 불러와 데이터의 특징을 파악하세요.</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -737,7 +734,7 @@ memory usage: 95.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="7318e86a" class="cell" data-execution_count="6">
+<div id="7ac5efe7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 2. poptotal(전체 인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>midwest_new<span class="op">=</span> midwest.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>, <span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span>
@@ -1045,7 +1042,7 @@ memory usage: 95.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="549a2567" class="cell" data-execution_count="7">
+<div id="500a783e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>midwest_new[<span class="st">"asian_per"</span>] <span class="op">=</span> midwest_new[<span class="st">"asian"</span>] <span class="op">/</span> midwest_new[<span class="st">"total"</span>] <span class="op">*</span> <span class="dv">100</span></span>
@@ -1063,7 +1060,7 @@ memory usage: 95.7+ KB</code></pre>
 <pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 </div>
-<div id="abc86d6e" class="cell" data-execution_count="8">
+<div id="8fc18d52" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 'large', 그 외에는 'small'을 부여한 파생변수를 만들어 보세요.</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1373,7 +1370,7 @@ memory usage: 95.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<div id="6f627a0d" class="cell" data-execution_count="9">
+<div id="443e295d" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 5.'large'와 'small'에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보시오.</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>count_test <span class="op">=</span> midwest_new[<span class="st">"asian_mean"</span>].value_counts()</span>
