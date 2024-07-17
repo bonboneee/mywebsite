@@ -1,5 +1,8 @@
 ---
-title: "hw3"
+title: "LS 빅데이터 스쿨 Homework 3"
+author: "유은서"
+date: "2024-07-17"
+categories: [bigdata]
 jupyter: python3
 ---
 ## p.173 mpg데이터를 이용해 분석 문제를 해결해 보세요.
