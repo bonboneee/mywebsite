@@ -1,5 +1,8 @@
 ---
-title: "hw1"
+title: "LS 빅데이터 스쿨 Homework 1"
+author: "유은서"
+data: "2024-07-12"
+categories: [bigdata]
 jupyter: python3
 ---
 
