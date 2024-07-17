@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,6 +102,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -184,6 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#p.173-mpg데이터를-이용해-분석-문제를-해결해-보세요." id="toc-p.173-mpg데이터를-이용해-분석-문제를-해결해-보세요." class="nav-link active" data-scroll-target="#p.173-mpg데이터를-이용해-분석-문제를-해결해-보세요.">p.173 mpg데이터를 이용해 분석 문제를 해결해 보세요.</a></li>
+  <li><a href="#p.185-결측치가-들어-있는-mpg-데이터를-이용해-분석-문제를-해결해-보세요." id="toc-p.185-결측치가-들어-있는-mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="nav-link" data-scroll-target="#p.185-결측치가-들어-있는-mpg-데이터를-이용해-분석-문제를-해결해-보세요.">p.185 결측치가 들어 있는 mpg 데이터를 이용해 분석 문제를 해결해 보세요.</a></li>
   </ul>
 </nav>
     </div>
@@ -196,11 +200,320 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="p.173-mpg데이터를-이용해-분석-문제를-해결해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="p.173-mpg데이터를-이용해-분석-문제를-해결해-보세요.">p.173 mpg데이터를 이용해 분석 문제를 해결해 보세요.</h2>
-<div id="309dd2eb" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">### mpg 데이터에는 연료 종류를 나타낸 f1 변수는 있지만 연료 가격을 나타낸 변수는 없습니다. 앞에서 만든 fuel 데이터를 이용해 mpg데이터에 price_f1(연료가격) 변수를 추가하세요.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8c7a7617" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 1. mpg 데이터에는 연료 종류를 나타낸 fl 변수는 있지만 연료 가격을 나타낸 변수는 없습니다. 앞에서 만든 fuel 데이터를 이용해 mpg데이터에 price_fl(연료가격) 변수를 추가하세요.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#fuel 데이터 입력</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fuel <span class="op">=</span> pd.DataFrame({<span class="st">'fl'</span>       : [<span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'p'</span>, <span class="st">'r'</span>],</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'price_fl'</span> : [<span class="fl">2.35</span>, <span class="fl">2.38</span>, <span class="fl">2.11</span>, <span class="fl">2.76</span>, <span class="fl">2.22</span>]})</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fuel</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#문제 풀이 시작</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"mpg.csv"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.merge(mpg, fuel, how <span class="op">=</span> <span class="st">'left'</span>, on <span class="op">=</span> <span class="st">'fl'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">manufacturer</th>
+<th data-quarto-table-cell-role="th">model</th>
+<th data-quarto-table-cell-role="th">displ</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">trans</th>
+<th data-quarto-table-cell-role="th">drv</th>
+<th data-quarto-table-cell-role="th">cty</th>
+<th data-quarto-table-cell-role="th">hwy</th>
+<th data-quarto-table-cell-role="th">fl</th>
+<th data-quarto-table-cell-role="th">category</th>
+<th data-quarto-table-cell-role="th">price_fl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>audi</td>
+<td>a4</td>
+<td>1.8</td>
+<td>1999</td>
+<td>4</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>18</td>
+<td>29</td>
+<td>p</td>
+<td>compact</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>audi</td>
+<td>a4</td>
+<td>1.8</td>
+<td>1999</td>
+<td>4</td>
+<td>manual(m5)</td>
+<td>f</td>
+<td>21</td>
+<td>29</td>
+<td>p</td>
+<td>compact</td>
+<td>2.76</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>audi</td>
+<td>a4</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>manual(m6)</td>
+<td>f</td>
+<td>20</td>
+<td>31</td>
+<td>p</td>
+<td>compact</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>audi</td>
+<td>a4</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>auto(av)</td>
+<td>f</td>
+<td>21</td>
+<td>30</td>
+<td>p</td>
+<td>compact</td>
+<td>2.76</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>audi</td>
+<td>a4</td>
+<td>2.8</td>
+<td>1999</td>
+<td>6</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>16</td>
+<td>26</td>
+<td>p</td>
+<td>compact</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">229</td>
+<td>volkswagen</td>
+<td>passat</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>auto(s6)</td>
+<td>f</td>
+<td>19</td>
+<td>28</td>
+<td>p</td>
+<td>midsize</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">230</td>
+<td>volkswagen</td>
+<td>passat</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>manual(m6)</td>
+<td>f</td>
+<td>21</td>
+<td>29</td>
+<td>p</td>
+<td>midsize</td>
+<td>2.76</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">231</td>
+<td>volkswagen</td>
+<td>passat</td>
+<td>2.8</td>
+<td>1999</td>
+<td>6</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>16</td>
+<td>26</td>
+<td>p</td>
+<td>midsize</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">232</td>
+<td>volkswagen</td>
+<td>passat</td>
+<td>2.8</td>
+<td>1999</td>
+<td>6</td>
+<td>manual(m5)</td>
+<td>f</td>
+<td>18</td>
+<td>26</td>
+<td>p</td>
+<td>midsize</td>
+<td>2.76</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">233</td>
+<td>volkswagen</td>
+<td>passat</td>
+<td>3.6</td>
+<td>2008</td>
+<td>6</td>
+<td>auto(s6)</td>
+<td>f</td>
+<td>17</td>
+<td>26</td>
+<td>p</td>
+<td>midsize</td>
+<td>2.76</td>
+</tr>
+</tbody>
+</table>
+
+<p>234 rows × 12 columns</p>
 </div>
-<div id="14b4a1c7" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 연료 가격 변수가 잘 추가됐는지 확인하기 위해 model, f1, price_f1 변수를 추출해 앞부분 5행을 출력해보세요.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="caadb800" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 연료 가격 변수가 잘 추가됐는지 확인하기 위해 model, f1, price_f1 변수를 추출해 앞부분 5행을 출력해보세요.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mpg[[<span class="st">"model"</span>, <span class="st">"fl"</span>, <span class="st">"price_fl"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">model</th>
+<th data-quarto-table-cell-role="th">fl</th>
+<th data-quarto-table-cell-role="th">price_fl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>a4</td>
+<td>p</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>a4</td>
+<td>p</td>
+<td>2.76</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>a4</td>
+<td>p</td>
+<td>2.76</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>a4</td>
+<td>p</td>
+<td>2.76</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>a4</td>
+<td>p</td>
+<td>2.76</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="p.185-결측치가-들어-있는-mpg-데이터를-이용해-분석-문제를-해결해-보세요." class="level2">
+<h2 class="anchored" data-anchor-id="p.185-결측치가-들어-있는-mpg-데이터를-이용해-분석-문제를-해결해-보세요.">p.185 결측치가 들어 있는 mpg 데이터를 이용해 분석 문제를 해결해 보세요.</h2>
+<div id="643344ef" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 1. drv(구동 방식)별로 hwy(고속도로 연비) 평균이 어떻게 다른지 알아보려고 합니다. 분석을 하기 전에 우선 두 변수에 결측치가 있는지 확인해야 합니다. drv 변수와 hwy 변수에 결측치가 몇 개 있는지 알아보세요.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#결측치 만들어주기</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pd.read_csv(<span class="st">"mpg.csv"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>mpg.loc[[<span class="dv">64</span>, <span class="dv">123</span>, <span class="dv">130</span>, <span class="dv">152</span>, <span class="dv">211</span>], <span class="st">'hwy'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>mpg[[<span class="st">'drv'</span>, <span class="st">'hwy'</span>]].isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>drv    0
+hwy    5
+dtype: int64</code></pre>
+</div>
+</div>
+<div id="7a69f121" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 2. df.dropna()를 이용해 hwy 변수의 결측치를 제거하고, 어떤 구동 방식의 hwy 평균이 높은지 알아보세요. 하나의 pandas 구문으로 만들어야 합니다.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mpg.dropna(subset <span class="op">=</span> <span class="st">'hwy'</span>).groupby(<span class="st">'drv'</span>).agg(mean_hwy <span class="op">=</span> (<span class="st">'hwy'</span>, <span class="st">'mean'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean_hwy</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">drv</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>19.242424</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">f</td>
+<td>28.200000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">r</td>
+<td>21.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 
 
