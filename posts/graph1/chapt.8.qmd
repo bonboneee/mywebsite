@@ -1,6 +1,8 @@
 ---
 title: "Do it 교과서 챕터8"
-format: html
+author: "유은서"
+date: "2024-07-22"
+categories: [bigdata]
 jupyter: python3
 ---
 
