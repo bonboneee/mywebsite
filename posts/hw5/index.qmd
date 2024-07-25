@@ -13,7 +13,7 @@ import math
 def f(x):
     return (1 / (2 * np.sqrt(2 * math.pi))) * np.exp(-0.5 * ((x - 3/2) ** 2))
 
-x = np.linspace(-3, 3, 100)
+x = np.linspace(0, 6, 100)
 plt.scatter(x, f(x), color='red', s =1)
 plt.show()
 plt.clf()
@@ -38,5 +38,5 @@ print(1 - (norm.cdf(7, loc = 2, scale = 3) - norm.cdf(3, loc = 2, scale = 3)))
 ### 3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?
 ```{python}
 from scipy.stats import norm
-norm.ppf(0.05,loc = 30, scale = 4)
+norm.ppf(0.95,loc = 30, scale = 2)
 ```
