@@ -10,7 +10,7 @@ jupyter: python3
 import matplotlib.pyplot as plt
 import numpy as np
 import math
- def f(x):
+def f(x):
     return (1 / (2 * np.sqrt(2 * math.pi))) * np.exp(-0.5 * ((x - 3/2) ** 2))
 
 x = np.linspace(-3, 3, 100)
