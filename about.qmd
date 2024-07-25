@@ -1,8 +1,7 @@
 ---
-title: "About"
+title: "About Me"
 jupyter: python3
 ---
 
-About this site
-
-## 준비중인 페이지입니다.
+![](유은서CV-1.png)
+![](유은서CV-2.png)
