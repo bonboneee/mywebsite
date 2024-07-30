@@ -1,0 +1,106 @@
+---
+title: "LS 빅데이터 스쿨 Homework 7"
+author: "유은서"
+date: "2024-07-30"
+categories: [bigdata]
+jupyter: python3
+---
+## 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기
+- norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정
+
+### 필요한 패키지 로드, 파일 불러서 복사본 만들기
+```{python}
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy.stats import norm
+#!pip install pyreadstat
+raw_welfare = pd.read_spss("C:/Users/USER/Documents/LS빅데이터/lsbigdata-project/data/koweps/Koweps_hpwc14_2019_beta2.sav")
+raw_welfare
+
+welfare = raw_welfare.copy()
+```
+### 컬럼 이름 바꾸기
+```{python}
+welfare=welfare.rename(columns = {
+                            "h14_g3": "sex",
+                            "h14_g4" : "birth",
+                            "h14_g10": "marriage_type",
+                            "h14_g11": "religion",
+                            "p1402_8aq1": "income",
+                            "h14_eco9": "code_job",
+                            "h14_reg7": "code_region"})
+                            
+welfare = welfare[["sex", "birth","marriage_type", "religion","income","code_job","code_region"]]
+```
+### sex 컬럼 male, female로 이름 변경
+```{python}
+welfare["sex"] = np.where(welfare["sex"] == 1, "male", "female")
+welfare["sex"].value_counts()
+
+welfare["income"].describe()
+#welfare["income"].isna().sum()
+
+#sum(welfare["income"] > 9998) #무응답이 nan으로 처리된것을 발견
+```
+### 성별에 따른 월급
+```{python}
+sex_income = welfare.dropna(subset ="income") \
+                     .groupby("sex", as_index = False) \
+                     .agg(mean_income = ("income", "mean"))
+
+
+
+sex_income
+```
+### 성별 월급 평균표
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.barplot(data = sex_income, x = "sex", y = "mean_income", hue = "sex")
+plt.show()
+plt.clf()
+```
+### 우선적으로 필요한 모수 구하기
+```{python}
+# 성별마다 income 데이터프레임 만들기
+f_income = welfare.dropna(subset = "income") \
+                  .query("sex == 'female'")['income']
+m_income = welfare.dropna(subset = 'income') \
+                  .query("sex == 'male'")['income']
+```
+```{python}
+#각 성별 평균
+f_bar = np.mean(f_income)
+m_bar = np.mean(m_income)
+```
+```{python}
+#표본표준편차 구하기
+f_std = np.sqrt(np.var(f_income, ddof=1))
+m_std = np.sqrt(np.var(m_income, ddof=1))
+```
+```{python}
+#성별 별 표본의 개수
+n_of_f= len(f_income)
+n_of_m= len(m_income)
+```
+### 95%
+```{python}
+a = norm.ppf(0.95, loc =0, scale = 1)
+```
+### 신뢰구간 계산하기
+```{python}
+f_left = f_bar - a * f_std/np.sqrt(n_of_f)
+f_right = f_bar + a * f_std/np.sqrt(n_of_f)
+m_left = m_bar - a * m_std/np.sqrt(n_of_m)
+m_right = m_bar + a * m_std/np.sqrt(n_of_m)
+```
+### 최종 그래프
+```{python}
+sns.barplot(data = sex_income, x = 'sex', y = 'mean_income', hue = "sex")
+plt.vlines(x = "female", ymin = f_left, ymax = f_right, colors = "red")
+plt.vlines(x = "male", ymin = m_left, ymax = m_right, colors = "black")
+plt.show()
+plt.clf()
+```
+
