@@ -30,19 +30,21 @@ x
 
 ### #2. 검정통계량 계산하시오. 15대의 복합 에너지 소비효율 표본평균, 표준편차 구하기
 ```{python}
-mean = x.mean()
-std = x.std(ddof = 1)
-t = (mean - 16) / (std /np.sqrt(len(x)))
+mean = np.mean(x)
+std = np.std(x, ddof = 1)
+t = (mean - 16) / (std /np.sqrt(15))
 t
 ```
 #3. p‑value을 구하세요.
 ```{python}
-from scipy.stats import norm
-norm.cdf(t, loc = 0, scale = 1)
+from scipy.stats import t
+t.cdf(t, len(x)-1)
 ```
 
 #4. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.
 ```{python}
-norm.ppf(0.025, loc=mean, scale=std)
-norm.ppf(0.975, loc=mean, scale=std)
+sigma = std / np.sqrt(15)
+right = mean + t.ppf(0.975, len(x)-1) * (sigma / np.sqrt(15))
+left = mean + t.ppf(0.025, len(x)-1) * (sigma / np.sqrt(15))
+print("신뢰구간은", left, "에서", right, "사이다.")
 ```
