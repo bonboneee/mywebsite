@@ -106,4 +106,3 @@ plt.vlines(x = "male", ymin = m_left, ymax = m_right, colors = "black")
 plt.show()
 plt.clf()
 ```
-
