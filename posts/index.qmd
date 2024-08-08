@@ -1,30 +1,22 @@
 ---
-title: "bonbon_eee
+title: "Recent posts"
 listing:
-  - id: posts-en
     contents: 
-    - "posts/**/*/**.qmd"
-    - "posts/**/*/**.ipynb"
+    - "**/*/**.qmd"
+    - "**/*/**.ipynb"
     type: grid
-      fields: [image, date, title, subtitle, categories, author, reading-time]
+    fields: [image, date, title, subtitle]
     sort: "date desc"
     categories: cloud
-    sort-ui: false
-    filter-ui: false
-    page-size: 9         
-  - id: posts-fr
-    contents: 
-    - "introgit.ipynb"
-    - "exogit.ipynb"
-    type: grid
-    fields: [image, date, title, subtitle, categories, author, reading-time]
-    sort: "date desc"
-    #categories: cloud
-    sort-ui: false
-    filter-ui: false
-    page-size: 3   
+    sort-ui: true
+    filter-ui: true
+    page-size: 36     
 page-layout: full
 title-block-banner: false
 comments: false
 toc: true
 ---
+
+
+::: {#posts}
+:::
