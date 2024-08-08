@@ -1,3 +1,4 @@
+---
 title: "bonbon_eee
 listing:
   - id: posts-en
@@ -5,3 +6,25 @@ listing:
     - "posts/**/*/**.qmd"
     - "posts/**/*/**.ipynb"
     type: grid
+      fields: [image, date, title, subtitle, categories, author, reading-time]
+    sort: "date desc"
+    categories: cloud
+    sort-ui: false
+    filter-ui: false
+    page-size: 9         
+  - id: posts-fr
+    contents: 
+    - "introgit.ipynb"
+    - "exogit.ipynb"
+    type: grid
+    fields: [image, date, title, subtitle, categories, author, reading-time]
+    sort: "date desc"
+    #categories: cloud
+    sort-ui: false
+    filter-ui: false
+    page-size: 3   
+page-layout: full
+title-block-banner: false
+comments: false
+toc: true
+---
