@@ -1,0 +1,7 @@
+title: "bonbon_eee
+listing:
+  - id: posts-en
+    contents: 
+    - "posts/**/*/**.qmd"
+    - "posts/**/*/**.ipynb"
+    type: grid
